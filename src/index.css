@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-maroon;
+  }
+  /* Visible keyboard focus for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #C7A339;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Signature element: a thin gold "zari thread" rule that unfurls under headings,
+     echoing the gold border woven into a saree's edge. */
+  .zari-rule {
+    @apply h-[2px] w-16 bg-zari-border origin-left animate-unfurl;
+  }
+
+  .section {
+    @apply px-6 sm:px-10 lg:px-20 py-16 lg:py-24;
+  }
+
+  .container-boutique {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-maroon text-cream px-6 py-3 rounded-sm font-body font-semibold tracking-wide
+    transition-all duration-300 hover:bg-maroon-dark hover:shadow-lg hover:-translate-y-0.5 focus-visible:-translate-y-0.5;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold text-maroon-dark px-6 py-3 rounded-sm font-body font-semibold tracking-wide
+    transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-maroon text-maroon px-6 py-3 rounded-sm font-body font-semibold tracking-wide
+    transition-all duration-300 hover:bg-maroon hover:text-cream;
+  }
+
+  .card-boutique {
+    @apply bg-white rounded-sm shadow-sm border border-gold/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
