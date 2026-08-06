@@ -38,7 +38,7 @@ export default function Navbar() {
         <Link to="/" className="font-display text-2xl text-cream tracking-wide">
           {SITE.name}
           <span className="block text-[10px] tracking-[0.3em] uppercase text-gold font-body">
-            Since {SITE.foundedYear}
+            By {SITE.founderName}
           </span>
         </Link>
 

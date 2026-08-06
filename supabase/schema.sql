@@ -1,5 +1,5 @@
 -- =====================================================================
--- Meera Silks — Saree Catalog Database Schema
+-- India Weaves — Saree Catalog Database Schema
 -- Run this in the Supabase SQL editor for a fresh project.
 -- =====================================================================
 

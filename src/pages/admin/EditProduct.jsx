@@ -12,7 +12,7 @@ export default function EditProduct() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    document.title = "Edit Product | Meera Silks";
+    document.title = "Edit Product | India Weaves";
     getProductById(id)
       .then(setProduct)
       .catch(setError)

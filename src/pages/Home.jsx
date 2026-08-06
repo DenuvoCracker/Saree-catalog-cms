@@ -6,7 +6,7 @@ import Testimonials from "../components/home/Testimonials.jsx";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Meera Silks | Handloom & Designer Sarees Boutique";
+    document.title = "India Weaves | Handloom & Designer Sarees Boutique";
   }, []);
 
   return (

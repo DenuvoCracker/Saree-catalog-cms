@@ -8,7 +8,7 @@ export default function Catalog() {
   const { products, loading, error } = useProducts(filters);
 
   useEffect(() => {
-    document.title = "Saree Catalog | Meera Silks";
+    document.title = "Saree Catalog | India Weaves";
   }, []);
 
   return (

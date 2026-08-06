@@ -11,7 +11,7 @@ const IMAGES = [
 
 export default function Gallery() {
   useEffect(() => {
-    document.title = "Gallery | Meera Silks";
+    document.title = "Gallery | India Weaves";
   }, []);
 
   return (

@@ -15,7 +15,7 @@ export default function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   useEffect(() => {
-    document.title = "Admin Login | Meera Silks";
+    document.title = "Admin Login | India Weaves";
   }, []);
 
   useEffect(() => {

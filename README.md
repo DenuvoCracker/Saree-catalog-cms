@@ -1,4 +1,4 @@
-# Meera Silks — Saree Catalog Website
+# India Weaves — Saree Catalog Website
 
 A production-ready **business catalog** (not e-commerce) for a local saree boutique. Customers browse
 sarees and enquire via WhatsApp; the shop owner manages the catalog through a password-protected

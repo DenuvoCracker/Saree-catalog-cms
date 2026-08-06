@@ -15,7 +15,7 @@ export default function Contact() {
   } = useForm();
 
   useEffect(() => {
-    document.title = "Contact Us | Meera Silks";
+    document.title = "Contact Us | India Weaves";
   }, []);
 
   // No backend endpoint required by the brief — this simulates a submit and

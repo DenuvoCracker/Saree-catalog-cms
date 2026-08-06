@@ -25,7 +25,7 @@ export default function ProductDetails() {
       .then(async (data) => {
         if (!active) return;
         setProduct(data);
-        document.title = `${data.name} | Meera Silks`;
+        document.title = `${data.name} | India Weaves`;
         const relatedData = await getRelatedProducts(data.category, data.id);
         if (active) setRelated(relatedData);
       })

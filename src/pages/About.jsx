@@ -3,7 +3,7 @@ import { SITE } from "../constants/site.js";
 
 export default function About() {
   useEffect(() => {
-    document.title = "About Us | Meera Silks";
+    document.title = "About Us | India Weaves";
   }, []);
 
   return (
@@ -13,7 +13,7 @@ export default function About() {
           <p className="zari-rule mb-4" />
           <h1 className="text-3xl sm:text-4xl mb-6">Our Story</h1>
           <p className="text-ink/70 font-body leading-relaxed mb-4">
-            Since {SITE.foundedYear}, {SITE.name} has been a quiet fixture of Chennai's silk
+            Founded by {SITE.founderName}, {SITE.name} has been a quiet fixture of Chennai's silk
             bazaar — a family boutique built on relationships with weaver cooperatives across
             Kanchipuram, Varanasi and beyond.
           </p>

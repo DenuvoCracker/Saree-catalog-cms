@@ -3,7 +3,7 @@ import ProductForm from "../../components/admin/ProductForm.jsx";
 
 export default function AddProduct() {
   useEffect(() => {
-    document.title = "Add Product | Meera Silks";
+    document.title = "Add Product | India Weaves";
   }, []);
 
   return (

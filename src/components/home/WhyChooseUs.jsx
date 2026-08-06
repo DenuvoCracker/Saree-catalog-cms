@@ -5,7 +5,7 @@ const FEATURES = [
   { icon: Gem, title: "Premium Quality", desc: "Every saree is hand-checked for weave, drape and finish before it reaches the floor." },
   { icon: Sparkles, title: "Authentic Handloom", desc: "Sourced directly from weaver cooperatives across India — no mass-produced imitations." },
   { icon: Wallet, title: "Affordable Prices", desc: "Boutique quality without boutique markups, priced fairly for every occasion." },
-  { icon: ShieldCheck, title: "Trusted Since " + SITE.foundedYear, desc: "Generations of Chennai families have trusted us for weddings and festivals alike." },
+  { icon: ShieldCheck, title: "Founded by " + SITE.founderName, desc: "Generations of Chennai families have trusted us for weddings and festivals alike." },
 ];
 
 export default function WhyChooseUs() {

@@ -14,7 +14,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Admin Dashboard | Meera Silks";
+    document.title = "Admin Dashboard | India Weaves";
     Promise.all([getDashboardStats(), getProducts({ sort: "newest" })])
       .then(([statsData, products]) => {
         setStats(statsData);

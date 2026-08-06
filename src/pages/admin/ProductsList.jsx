@@ -12,7 +12,7 @@ export default function ProductsList() {
   const { products, loading, error, refetch } = useProducts(filters);
 
   useEffect(() => {
-    document.title = "Manage Products | Meera Silks";
+    document.title = "Manage Products | India Weaves";
   }, []);
 
   return (
