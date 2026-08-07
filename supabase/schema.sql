@@ -1,10 +1,5 @@
--- =====================================================================
--- India Weaves — Saree Catalog Database Schema
--- Run this in the Supabase SQL editor for a fresh project.
--- =====================================================================
-
--- Extension for gen_random_uuid()
 create extension if not exists "pgcrypto";
+create extension if not exists pg_trgm;
 
 -- -----------------------------------------------------------------
 -- Table: products
@@ -29,7 +24,6 @@ create index if not exists idx_products_category on public.products (category);
 create index if not exists idx_products_stock_status on public.products (stock_status);
 create index if not exists idx_products_created_at on public.products (created_at desc);
 create index if not exists idx_products_name_trgm on public.products using gin (name gin_trgm_ops);
-create extension if not exists pg_trgm;
 
 -- Keep updated_at fresh automatically on every UPDATE
 create or replace function public.set_updated_at()
