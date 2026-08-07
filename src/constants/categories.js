@@ -1,6 +1,8 @@
 export const CATEGORIES = [
   "Kanjivaram Silk",
   "Banarasi Silk",
+  "Stiched Suit",
+  "Silk",
   "Cotton",
   "Chiffon",
   "Georgette",
@@ -8,6 +10,7 @@ export const CATEGORIES = [
   "Linen",
   "Tussar Silk",
   "Bridal Collection",
+  "Other",
 ];
 
 export const SORT_OPTIONS = [
