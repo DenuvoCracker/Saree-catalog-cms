@@ -16,6 +16,7 @@ export default function ProductForm({ product }) {
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: product?.name || "",
+      original_price: product?.original_price || "", 
       price: product?.price || "",
       description: product?.description || "",
       category: product?.category || CATEGORIES[0],
@@ -31,10 +32,22 @@ export default function ProductForm({ product }) {
       toast.error("Please upload at least one product image");
       return;
     }
+    if (
+      formData.original_price &&
+      Number(formData.original_price) < Number(formData.price)
+    ) {
+      toast.error(
+        "Original price must be greater than or equal to selling price."
+      );
+      return;
+    }
     setSaving(true);
     const payload = {
       ...formData,
       price: Number(formData.price),
+      original_price: formData.original_price
+        ? Number(formData.original_price)
+        : null,
       image_urls: images,
     };
     try {
@@ -69,17 +82,65 @@ export default function ProductForm({ product }) {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="price" className="block text-sm font-body mb-1.5">Price (₹)</label>
-          <input
-            id="price"
-            type="number"
-            min="0"
-            step="1"
-            {...register("price", { required: "Price is required", min: { value: 0, message: "Price must be positive" } })}
-            className="w-full border border-gold/30 rounded-sm px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold"
-          />
-          {errors.price && <p className="text-red-600 text-xs mt-1">{errors.price.message}</p>}
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              htmlFor="original_price"
+              className="block text-sm font-body mb-1.5"
+            >
+              Original Price (₹)
+            </label>
+
+            <input
+              id="original_price"
+              type="number"
+              min="0"
+              step="1"
+              {...register("original_price", {
+                min: {
+                  value: 0,
+                  message: "Price must be positive",
+                },
+              })}
+              className="w-full border border-gold/30 rounded-sm px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold"
+            />
+
+            {errors.original_price && (
+              <p className="text-red-600 text-xs mt-1">
+                {errors.original_price.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="price"
+              className="block text-sm font-body mb-1.5"
+            >
+              Selling Price (₹)
+            </label>
+
+            <input
+              id="price"
+              type="number"
+              min="0"
+              step="1"
+              {...register("price", {
+                required: "Selling price is required",
+                min: {
+                  value: 0,
+                  message: "Price must be positive",
+                },
+              })}
+              className="w-full border border-gold/30 rounded-sm px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold"
+            />
+
+            {errors.price && (
+              <p className="text-red-600 text-xs mt-1">
+                {errors.price.message}
+              </p>
+            )}
+          </div>
         </div>
 
         <div>

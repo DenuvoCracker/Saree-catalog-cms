@@ -3,8 +3,14 @@ import Badge from "../ui/Badge.jsx";
 import { formatCurrency } from "../../utils/formatCurrency.js";
 
 export default function ProductCard({ product }) {
-  const { id, name, category, price, image_urls, stock_status, new_arrival, trending, featured } = product;
+  const { id, name, category, price, original_price, image_urls, stock_status, new_arrival, trending, featured } = product;
   const soldOut = stock_status === "sold_out";
+  const hasDiscount = original_price && Number(original_price) > Number(price);
+  const discountPercentage = hasDiscount
+    ? Math.round(
+      ((Number(original_price) - Number(price)) / Number(original_price)) * 100
+      )
+    : 0;
 
   return (
     <Link
@@ -35,8 +41,29 @@ export default function ProductCard({ product }) {
         <p className="text-xs uppercase tracking-wider text-gold-dark font-body mb-1">{category}</p>
         <h3 className="font-display text-lg text-maroon leading-snug">{name}</h3>
         <div className="flex items-center justify-between mt-2">
-          <span className="font-body font-semibold text-ink">{formatCurrency(price)}</span>
-          <Badge variant={soldOut ? "soldOut" : "inStock"}>{soldOut ? "Sold Out" : "In Stock"}</Badge>
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-body font-semibold text-ink text-lg">
+                {formatCurrency(price)}
+              </span>
+
+              {hasDiscount && (
+                <>
+                  <span className="text-sm text-gray-400 line-through">
+                    {formatCurrency(original_price)}
+                  </span>
+
+                  <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
+                    {discountPercentage}% OFF
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
+
+          <Badge variant={soldOut ? "soldOut" : "inStock"}>
+            {soldOut ? "Sold Out" : "In Stock"}
+          </Badge>
         </div>
       </div>
     </Link>

@@ -47,6 +47,17 @@ export default function ProductDetails() {
   }
 
   const soldOut = product.stock_status === "sold_out";
+  const hasDiscount =
+    product.original_price &&
+    Number(product.original_price) > Number(product.price);
+
+  const discountPercentage = hasDiscount
+    ? Math.round(
+        ((Number(product.original_price) - Number(product.price)) /
+          Number(product.original_price)) *
+          100
+      )
+    : 0;
 
   return (
     <section className="section">
@@ -63,7 +74,25 @@ export default function ProductDetails() {
 
           <p className="text-xs uppercase tracking-wider text-gold-dark font-body mb-1">{product.category}</p>
           <h1 className="text-3xl sm:text-4xl mb-3">{product.name}</h1>
-          <p className="text-2xl font-body font-semibold text-ink mb-6">{formatCurrency(product.price)}</p>
+          <div className="mb-6">
+            <div className="flex items-center gap-3 flex-wrap">
+              <span className="text-3xl font-body font-bold text-ink">
+                {formatCurrency(product.price)}
+              </span>
+
+              {hasDiscount && (
+                <>
+                  <span className="text-xl text-gray-400 line-through">
+                    {formatCurrency(product.original_price)}
+                  </span>
+
+                  <span className="bg-green-100 text-green-700 text-sm font-semibold px-3 py-1 rounded-full">
+                    {discountPercentage}% OFF
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
           <p className="text-ink/70 font-body leading-relaxed mb-8">{product.description}</p>
 
           <a
