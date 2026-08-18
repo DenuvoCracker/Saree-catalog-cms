@@ -19,6 +19,7 @@ export default function About() {
           <p className="text-ink/70 font-body leading-relaxed mb-4">
             Our collection features Banarasi, Maheshwari, Chanderi, Organza, Cotton, Silk & more, selected
             with a focus on quality, elegance and timeless style.
+            <br />
             Our speciality: We offer customised Banarasi, Maheshwari & Chanderi sarees, along with 
             customised suits, created according to your choice of colour, design and fabric.
           </p>
@@ -26,8 +27,10 @@ export default function About() {
             Today, we've brought the boutique experience online — not as a marketplace, but
             as a catalog you can browse at your own pace, with a real conversation on WhatsApp
             whenever you're ready.
-
+          </p>
+          <p className="text-ink/70 font-body leading-relaxed">
             India Weaves by Shikha
+            <br />
             Traditional weaves. Personalised beautifully.
           </p>
         </div>
