@@ -23,7 +23,7 @@ export default function About() {
             Our speciality: We offer customised Banarasi, Maheshwari & Chanderi sarees, along with 
             customised suits, created according to your choice of colour, design and fabric.
           </p>
-          <p className="text-ink/70 font-body leading-relaxed">
+          <p className="text-ink/70 font-body leading-relaxed mb-4">
             Today, we've brought the boutique experience online — not as a marketplace, but
             as a catalog you can browse at your own pace, with a real conversation on WhatsApp
             whenever you're ready.
