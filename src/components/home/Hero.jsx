@@ -17,7 +17,7 @@ export default function Hero() {
           {SITE.tagline}
         </h1>
         <p className="text-cream/80 font-body mt-5 max-w-lg text-base sm:text-lg">
-          Explore our curated collection of handloom, silk and designer sarees — each piece enquired
+          Explore our curated collection of handloom, silk and designer sarees & suits — each piece enquired
           about directly, no checkout carts, just a conversation with our boutique.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">

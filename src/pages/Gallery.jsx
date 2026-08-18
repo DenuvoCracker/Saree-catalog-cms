@@ -2,11 +2,11 @@ import { useEffect } from "react";
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1583391733956-6c78276477e2?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1610030469978-6bb537f3b982?q=80&w=800&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1610030181087-540e4d0a4a20?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1610189844293-93a1a3d3c8c6?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1610030180229-8d1a4235bf94?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1610189026297-df356264479c?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1610030469839-f909584b43f1?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1609748341932-f0206c09412b?q=80&w=800&auto=format&fit=crop",
 ];
 
 export default function Gallery() {
